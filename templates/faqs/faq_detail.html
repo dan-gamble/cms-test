@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load html %}
+
+{% block content_primary %}
+
+<h1>{{ faq.question }}</h1>
+<p>{{ faq.answer|html }}</p>
+
+{% endblock content_primary %}
