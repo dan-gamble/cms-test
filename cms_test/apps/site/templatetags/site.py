@@ -1,6 +1,10 @@
 import json
+import pprint
 
+import jinja2
 from django import template
+from django.utils.html import escape
+from django_jinja import library
 
 register = template.Library()
 
@@ -56,3 +60,4 @@ def navigation_json(context, pages, section=None):
         entries = [section_entry] + list(entries)
 
     return json.dumps(entries)
+
