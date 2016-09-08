@@ -260,6 +260,9 @@ TEMPLATES = [
                 "webpack_loader.contrib.jinja2ext.WebpackExtension",
                 "compressor.contrib.jinja2ext.CompressorExtension"
             ],
+            # "globals": {
+            #     "navigation_json": "cms_test.apps.site.templatetags.site.navigation_json"
+            # },
             "bytecode_cache": {
                 "name": "default",
                 "backend": "django_jinja.cache.BytecodeCache",
