@@ -12,7 +12,7 @@
       <link rel="canonical" href="{{ get_canonical_url() }}"/>
     {% endblock %}
 
-    {% if paginator.num_pages %}
+    {% if page_obj and page_obj.has_other_pages() %}
       {% if page_obj.has_previous() %}
         <link rel="previous" href="{{ get_pagination_url(page_obj.previous_page_number()) }}">
       {% endif %}
