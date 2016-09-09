@@ -8,7 +8,19 @@
     <meta name="description" content="{% block meta_description %}{{ get_meta_description() }}{% endblock %}">
     <meta name="robots" content="{% block meta_robots %}{{ get_meta_robots() }}{% endblock %}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="canonical" href="{{ get_canonical_url() }}"/>
+    {% block canonical %}
+      <link rel="canonical" href="{{ get_canonical_url() }}"/>
+    {% endblock %}
+
+    {% if paginator.num_pages %}
+      {% if page_obj.has_previous() %}
+        <link rel="previous" href="{{ get_pagination_url(page_obj.previous_page_number()) }}">
+      {% endif %}
+
+      {% if page_obj.has_next() %}
+        <link rel="next" href="{{ get_pagination_url(page_obj.next_page_number()) }}">
+      {% endif %}
+    {% endif %}
 
     <!-- Open Graph data -->
     <meta property="og:title" content="{% block og_title %}{{ get_og_title() }}{% endblock %}">
@@ -44,6 +56,7 @@
     {% include 'base/_analytics.html' %}
 
     {% block site %}
+      {{ 'tree are you'|title() }}
       <div class="lyt-Site">
         {% include 'base/_header.html' %}
 

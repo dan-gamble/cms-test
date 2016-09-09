@@ -1,8 +1,17 @@
 {% extends "base.html" %}
+
 {% block content_primary %}
-  {{ career.title }}
-  {% if career.location %}{{ career.location }}{% endif %}
-  {% if career.summary %}{{ career.summary }}{% endif %}
-  {{ career.description|html }}
-  {% if career.how_to_apply %}{{ career.how_to_apply|html }}{% endif %}
+
+  {% if pages.current.content.standfirst %}
+    <p class="standfirst">{{ pages.current.content.standfirst }}</p>
+  {% endif %}
+
+  {% for career in career_list %}
+    <a href="{{ career.get_absolute_url() }}">{{ career.title }}</a>
+    {% if career.location %}{{ career.location }}{% endif %}
+    {% if career.summary %}{{ career.summary }}{% endif %}
+    {{ career.description|html }}
+    {% if career.how_to_apply %}{{ career.how_to_apply|html }}{% endif %}
+  {% endfor %}
+
 {% endblock content_primary %}
