@@ -83,7 +83,7 @@
 
       {{ render_bundle('shared', 'js') }}
       {{ render_bundle('app', 'js') }}
-      <script src="/static/flexible-images/flexible-images.js"></script>
+      <script src="{{ static('flexible-images/flexible-images.js') }}"></script>
 
       {% block compressed_js_last %}{% endblock %}
     {% endcompress %}
