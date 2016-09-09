@@ -156,7 +156,7 @@ INSTALLED_APPS = [
 
     "redirects",
 
-    # "cms_test.apps.careers",
+    "cms_test.apps.careers",
     # "cms_test.apps.faqs",
     "cms_test.apps.footer",
     "cms_test.apps.news",

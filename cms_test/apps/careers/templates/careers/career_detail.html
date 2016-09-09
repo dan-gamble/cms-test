@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content_primary %}
+  {{ career.title }}
+  {% if career.location %}{{ career.location }}{% endif %}
+  {% if career.summary %}{{ career.summary }}{% endif %}
+  {{ career.description|html }}
+  {% if career.how_to_apply %}{{ career.how_to_apply|html }}{% endif %}
+{% endblock content_primary %}
