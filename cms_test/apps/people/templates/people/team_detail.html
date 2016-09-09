@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content_primary %}
+
+  {{ team.title }}
+
+  {% for person in team.person_set.all() %}
+    <a href="{{ person.get_absolute_url() }}">{{ person }}</a>
+  {% endfor %}
+
+{% endblock content_primary %}

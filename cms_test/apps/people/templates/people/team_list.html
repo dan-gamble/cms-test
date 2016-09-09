@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content_primary %}
+  {% for team in team_list %}
+    <a href="{{ pages.current.get_absolute_url() }}team/{{ team.url_title }}">{{ team.title }}</a>
+  {% else %}
+    <p>There have been no teams added yet.</p>
+  {% endfor %}
+{% endblock content_primary %}

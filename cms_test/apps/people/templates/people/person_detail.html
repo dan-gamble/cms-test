@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content_primary %}
+
+  {{ person.first_name }}
+  {{ person.last_name }}
+  {{ person.url_title }}
+
+  {% if person.email %}
+    {{ person.email }}
+  {% endif %}
+
+  {% if person.linkedin_username %}
+    {{ person.linkedin_username }}
+  {% endif %}
+
+  {% if person.skype_username %}
+    {{ person.skype_username }}
+  {% endif %}
+
+  {% if person.twitter_username %}
+    {{ person.twitter_username }}
+  {% endif %}
+
+{% endblock content_primary %}
